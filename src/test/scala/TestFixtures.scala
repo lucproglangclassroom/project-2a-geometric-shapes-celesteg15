@@ -10,7 +10,6 @@ object TestFixtures:
   val simpleLocation  = Location(70, 30, Rectangle(80, 120))
 
   // To get (-50, -30, 120, 70): shift the 20x40 rectangle right by 50
-  // ellipse bbox: (-50,-30) .. (50,30)
   // located rect bbox: (50,0) .. (70,40)  -> union maxX = 70, maxY = 40
   
   val basicGroup = Group(List(
