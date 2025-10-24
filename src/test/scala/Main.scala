@@ -5,8 +5,8 @@ import Shape.Rectangle
 
 object Main:
   def main(args: Array[String]): Unit =
-    val bb = boundingBox(simplelocation)          
-    println(s"bbox(simplelocation) = $bb")
+    val bb = boundingBox(simpleLocation)          
+    println(s"bbox(simpleLocation) = $bb")
 
     println(Rectangle(2, 3) == Rectangle(2, 3))
 

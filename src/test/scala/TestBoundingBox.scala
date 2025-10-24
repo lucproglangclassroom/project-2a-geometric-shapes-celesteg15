@@ -9,11 +9,11 @@ class TestBoundingBox extends AnyFunSuite:
 
   def testBoundingBox(description: String, s: Shape, x: Int, y: Int, width: Int, height: Int): Unit =
     test(description):
-      val Location(u, v, Rectangle(w, h)) = boundingBox(s)
-      assert(x == u)
-      assert(y == v)
-      assert(width == w)
-      assert(height == h)
+      val Location(bx, by, Rectangle(bw, bh)) = boundingBox(s)
+      assert(bx == x)
+      assert(by == y)
+      assert(bw == width)
+      assert(bh == height)
 
   // TODO comment these tests back in
 
