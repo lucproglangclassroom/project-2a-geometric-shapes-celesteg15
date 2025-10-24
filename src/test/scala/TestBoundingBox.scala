@@ -1,27 +1,25 @@
 package edu.luc.cs.laufer.cs371.shapes
 
 import org.scalatest.funsuite.AnyFunSuite
-
 import TestFixtures.*
 import Shape.*
 
 class TestBoundingBox extends AnyFunSuite:
 
-  def testBoundingBox(description: String, s: Shape, x: Int, y: Int, width: Int, height: Int): Unit =
-    test(description):
-      val Location(bx, by, Rectangle(bw, bh)) = boundingBox(s)
+  private def check(desc: String, s: Shape, x: Int, y: Int, w: Int, h: Int): Unit =
+    test(desc):
+      val Location(bx, by, Rectangle(bw, bh)) = (boundingBox(s)): @unchecked
       assert(bx == x)
       assert(by == y)
-      assert(bw == width)
-      assert(bh == height)
+      assert(bw == w)
+      assert(bh == h)
 
-  // TODO comment these tests back in
-
-  //  testBoundingBox("simple ellipse", simpleEllipse, -50, -30, 100, 60)
-  testBoundingBox("simple rectangle", simpleRectangle, 0, 0, 80, 120)
-  testBoundingBox("simple location", simpleLocation, 70, 30, 80, 120)
-  //  testBoundingBox("basic group", basicGroup, -50, -30, 100, 70)
-  //  testBoundingBox("simple group", simpleGroup, 150, 70, 350, 280)
-  //  testBoundingBox("complex group", complexGroup, 30, 60, 470, 320)
+  // enable tests
+  check("simple ellipse",   simpleEllipse,   -50, -30, 100,  60)
+  check("simple rectangle", simpleRectangle,   0,   0,  80, 120)
+  check("simple location",  simpleLocation,   70,  30,  80, 120)
+  check("basic group",      basicGroup,      -50, -30, 100,  70)
+  check("simple group",     simpleGroup,     150,  70, 350, 280)
+  check("complex group",    complexGroup,     30,  60, 470, 320)
 
 end TestBoundingBox
