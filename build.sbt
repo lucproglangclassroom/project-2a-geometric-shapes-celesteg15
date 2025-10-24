@@ -1,5 +1,5 @@
-ThisBuild / scalaVersion := "3.7.3"
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.19" % Test
+import scoverage.ScoverageKeys.*
 
-coverageMinimum := 70
-coverageFailOnMinimum := false
+ThisBuild / scalaVersion := "3.7.3"
+
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.19" % Test
